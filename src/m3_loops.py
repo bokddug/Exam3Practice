@@ -5,8 +5,8 @@ This problem provides practice at:
   ***  FOR and WHILE loops.  ***
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and JaeJung Hyun.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -45,7 +45,7 @@ def main():
 def run_test_practice_problem3():
     """ Tests the   practice_problem3  function. """
     ####################################################################
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  practice_problem3  function defined below.
     #   Include at least ** 2 ** ADDITIONAL tests beyond those we wrote.
     #
@@ -134,6 +134,104 @@ def run_test_practice_problem3():
     # SUGGESTION: Ask an assistant to CHECK your tests to confirm
     #             that they are adequate tests!
     ####################################################################
+    tests = [st.SimpleTestCase(practice_problem3,
+                               [-2, 2, 1.3],
+                               [1, 7]),
+             st.SimpleTestCase(practice_problem3,
+                               [-5, 3, 0.25],
+                               [-5, 0, 1]),
+             st.SimpleTestCase(practice_problem3,
+                               [-5, 4, 0.25],
+                               [-5, 0, 1, 2]),
+             st.SimpleTestCase(practice_problem3,
+                               [-5, 5, 0.25],
+                               [-5, 0, 1, 2, 6]),
+             st.SimpleTestCase(practice_problem3,
+                               [-5, 6, 0.25],
+                               [-5, 0, 1, 2, 6, 7]),
+             st.SimpleTestCase(practice_problem3,
+                               [-5, 7, 0.25],
+                               [-5, 0, 1, 2, 6, 7, 8]),
+             st.SimpleTestCase(practice_problem3,
+                               [-3, 3, -1.0],
+                               [-1, 0, 1]),
+             st.SimpleTestCase(practice_problem3,
+                               [-3, 4, -1.0],
+                               [-1, 0, 1, 2]),
+             st.SimpleTestCase(practice_problem3,
+                               [-3, 5, -1.0],
+                               [-1, 0, 1, 2, 3]),
+             st.SimpleTestCase(practice_problem3,
+                               [-3, 6, -1.0],
+                               [-1, 0, 1, 2, 3, 5]),
+             st.SimpleTestCase(practice_problem3,
+                               [30, 0, -1000],
+                               []),
+             st.SimpleTestCase(practice_problem3,
+                               [100, 5, 1.414],
+                               [139, 183, 516, 560, 849]),
+             st.SimpleTestCase(practice_problem3,
+                               [0, 1, 1.414213562373],
+                               [286602]),
+             ]
+    # 14th test:
+    big_list = []
+    for k in range(888, 1888):
+        big_list.append(k)
+    tests.append(st.SimpleTestCase(practice_problem3,
+                                   [888, 1000,
+                                    - math.sqrt(2) - 0.00000000001],
+                                   big_list))
+
+
+    tests = [st.SimpleTestCase(practice_problem3,
+                                   [-2, 2, 1.3],
+                                   [1, 7]),
+                 st.SimpleTestCase(practice_problem3,
+                                   [-5, 3, 0.25],
+                                   [-5, 0, 1]),
+                 st.SimpleTestCase(practice_problem3,
+                                   [-5, 4, 0.25],
+                                   [-5, 0, 1, 2]),
+                 st.SimpleTestCase(practice_problem3,
+                                   [-5, 5, 0.25],
+                                   [-5, 0, 1, 2, 6]),
+                 st.SimpleTestCase(practice_problem3,
+                                   [-5, 6, 0.25],
+                                   [-5, 0, 1, 2, 6, 7]),
+                 st.SimpleTestCase(practice_problem3,
+                                   [-5, 7, 0.25],
+                                   [-5, 0, 1, 2, 6, 7, 8]),
+                 st.SimpleTestCase(practice_problem3,
+                                   [-3, 3, -1.0],
+                                   [-1, 0, 1]),
+                 st.SimpleTestCase(practice_problem3,
+                                   [-3, 4, -1.0],
+                                   [-1, 0, 1, 2]),
+                 st.SimpleTestCase(practice_problem3,
+                                   [-3, 5, -1.0],
+                                   [-1, 0, 1, 2, 3]),
+                 st.SimpleTestCase(practice_problem3,
+                                   [-3, 6, -1.0],
+                                   [-1, 0, 1, 2, 3, 5]),
+                 st.SimpleTestCase(practice_problem3,
+                                   [30, 0, -1000],
+                                   []),
+                 st.SimpleTestCase(practice_problem3,
+                                   [100, 5, 1.414],
+                                   [139, 183, 516, 560, 849]),
+                 st.SimpleTestCase(practice_problem3,
+                                   [0, 1, 1.414213562373],
+                                   [286602]),
+                 ]
+    # 14th test:
+    big_list = []
+    for k in range(888, 1888):
+        big_list.append(k)
+    tests.append(st.SimpleTestCase(practice_problem3,
+                                    [888, 1000,
+                                    - math.sqrt(2) - 0.00000000001],
+                                    big_list))
 
 
 def practice_problem3(start, n, threshold):
@@ -208,7 +306,7 @@ def practice_problem3(start, n, threshold):
       :type threshold: float
     """
     ####################################################################
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Some tests are already written for you (above),
     #          but you are required to write ADDITIONAL tests (above).
     ####################################################################
@@ -216,7 +314,15 @@ def practice_problem3(start, n, threshold):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   < 15 minutes.
     ####################################################################
-
+    box=[]
+    a=start
+    while True:
+        if len(box) >= n:
+            break
+        if math.sin(a)+math.cos(a)>threshold:
+            box += [a]
+        a += 1
+    return box
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.

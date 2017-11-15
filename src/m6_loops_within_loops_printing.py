@@ -75,7 +75,7 @@ def shape(r):
     For purposes of "lining up", assume r is a single digit.
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     ####################################################################
@@ -87,7 +87,17 @@ def shape(r):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:  15 minutes.
     # ------------------------------------------------------------------
-
+    for k in range(r):
+        for i in range(k):
+            print(' ', end='')
+        for i in range(r-k):
+            print('+',end='')
+        print('!',end='')
+        for i in range(r-k):
+            print(r-k-i,end='')
+        for i in range(k):
+            print('-',end='')
+        print()
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
